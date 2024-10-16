@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="">
+	  <siteMapNode url="Wel" title="Trang chủ">
+	  </siteMapNode>
+    <siteMapNode url="GridView" title="quản lý học sinh">
+    </siteMapNode>
+    <siteMapNode url="Menu" title="Danh Mục">
+    </siteMapNode>
+    <siteMapNode url="Scheduler" title="Báo cáo">
+    </siteMapNode>
+	  <siteMapNode url="Article" title="Trợ giúp">
+	  </siteMapNode>
+	  <siteMapNode url="Home" title="Hệ Thống">
+	  </siteMapNode>
+	  <siteMapNode url="Student" title="Học sinh">
+	  </siteMapNode>
+  </siteMapNode>
+</siteMap>

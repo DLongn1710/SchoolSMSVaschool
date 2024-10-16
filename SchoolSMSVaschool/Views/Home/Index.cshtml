@@ -1,0 +1,17 @@
+﻿@{
+    <link rel="icon" href="~/Image/logo.jpg" type="image/gif" sizes="16x16">
+
+    ViewBag.Title = "SMS VASCHOOLS";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>Welcome to SMS VASCHOOLS</h1>
+    <img src="~/Content/Images/school.png" style="width:100%;height:500px;"/>
+@section LeftPanelContent {
+    @Html.Partial("LeftPanelPartial")
+}
+
+<div class="text-content" id="TextContent">
+    @Html.Raw(File.ReadAllText(Server.MapPath(@"~/App_Data/Overview.html")))
+</div>

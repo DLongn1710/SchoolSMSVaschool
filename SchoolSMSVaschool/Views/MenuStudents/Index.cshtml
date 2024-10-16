@@ -1,0 +1,167 @@
+﻿@model IEnumerable<SchoolSMSVaschool.Model.MenuStudent>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ma2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgaySinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GioiTinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoiSinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DanToc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuocTich)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DienThoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenCha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DTCha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenMe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DTMe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TinhTrang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Khoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoSo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChinhSach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenNguoiQuanHe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuanHe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ma2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiSinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanToc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuocTich)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenCha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DTCha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DTMe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Khoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoSo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChinhSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNguoiQuanHe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuanHe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

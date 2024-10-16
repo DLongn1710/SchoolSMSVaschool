@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Nodes>
+  <!--<TreeViewNode Text="Responsive Web Application" NavigateUrl="#ResponsiveWebApplication">
+    <TreeViewNode Text="Navigation Bar" NavigateUrl="#navbar" />
+    <TreeViewNode Text="Sidebars" NavigateUrl="#sidebar" />
+    <TreeViewNode Text="Adaptive Toolbar" NavigateUrl="#toolbar" />
+    <TreeViewNode Text="Sticky Footer" NavigateUrl="#stickyFooter" />
+  </TreeViewNode>
+  <TreeViewNode Text="Content Pages" NavigateUrl="#content">
+    <TreeViewNode Text="Grid View" NavigateUrl="#grid" />
+    <TreeViewNode Text="Scheduler" NavigateUrl="#scheduler" />
+    <TreeViewNode Text="Article" NavigateUrl="#article" />
+    <TreeViewNode Text="SignIn/Register" NavigateUrl="#signin" />
+  </TreeViewNode>-->
+	<TreeViewNode Text="Hệ thống" NavigateUrl="#ResponsiveWebApplication">
+		<TreeViewNode Text="Đổi mật khẩu" NavigateUrl="" />
+		<TreeViewNode Text="Đăng nhập" NavigateUrl="#sidebar" />
+		<TreeViewNode Text="Thoát" NavigateUrl="#SignIn" />
+	</TreeViewNode>
+	<TreeViewNode Text="Danh mục" NavigateUrl="#ResponsiveWebApplication">
+		<TreeViewNode Text="Danh mục " NavigateUrl="#navbar" />
+		<TreeViewNode Text="Đăng nhập" NavigateUrl="#sidebar" />
+		<TreeViewNode Text="Thoát" NavigateUrl="#toolbar" />
+	</TreeViewNode>
+	<TreeViewNode Text="Quản lý học sinh" NavigateUrl="#content">
+		<TreeViewNode Text="Grid View" NavigateUrl="#grid" />
+		<TreeViewNode Text="Scheduler" NavigateUrl="#scheduler" />
+		<TreeViewNode Text="Article" NavigateUrl="#article" />
+		<TreeViewNode Text="SignIn/Register" NavigateUrl="#signin" />
+	</TreeViewNode>
+	<TreeViewNode Text="Báo cáo" NavigateUrl="#content">
+		<TreeViewNode Text="Grid View" NavigateUrl="#grid" />
+		<TreeViewNode Text="Scheduler" NavigateUrl="#scheduler" />
+		<TreeViewNode Text="Article" NavigateUrl="#article" />
+		<TreeViewNode Text="SignIn/Register" NavigateUrl="#signin" />
+	</TreeViewNode>
+	<TreeViewNode Text="Trợ giúp" NavigateUrl="#content">
+		<TreeViewNode Text="Grid View" NavigateUrl="#grid" />
+		<TreeViewNode Text="Scheduler" NavigateUrl="#scheduler" />
+		<TreeViewNode Text="Article" NavigateUrl="#article" />
+		<TreeViewNode Text="SignIn/Register" NavigateUrl="#signin" />
+	</TreeViewNode>
+</Nodes>

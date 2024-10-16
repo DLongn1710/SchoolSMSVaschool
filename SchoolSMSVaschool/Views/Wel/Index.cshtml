@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "WELCOME TO VASCHOOL";
+}
+
+@{
+    ViewBag.Title = "Welcome to Vaschool";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-content" id="TextContent">
+    @Html.Raw(File.ReadAllText(Server.MapPath(@"~/App_Data/Wel.html")))
+</div>

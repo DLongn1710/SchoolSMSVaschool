@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="student_db_allModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'student_db_all.dbo.aci_hocsinh_excel' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="aci_hocsinh_excel">
+          <Property Name="stt" Type="nvarchar" MaxLength="255" />
+          <Property Name="malop" Type="nvarchar" MaxLength="255" />
+          <Property Name="ma2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ma" Type="nvarchar" MaxLength="255" />
+          <Property Name="hoten" Type="nvarchar" MaxLength="255" />
+          <Property Name="sinhnhat" Type="nvarchar" MaxLength="255" />
+          <Property Name="phai" Type="nvarchar" MaxLength="255" />
+          <Property Name="tinhtrang" Type="nvarchar" MaxLength="255" />
+          <Property Name="dantoc" Type="nvarchar" MaxLength="255" />
+          <Property Name="quoctich" Type="nvarchar" MaxLength="255" />
+          <Property Name="dctt_tinh_TP" Type="nvarchar" MaxLength="255" />
+          <Property Name="dctt_quan_huyen" Type="nvarchar" MaxLength="255" />
+          <Property Name="dctt_phuong_xa" Type="nvarchar" MaxLength="255" />
+          <Property Name="noisinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+          <Property Name="dclh_tinh_tp" Type="nvarchar" MaxLength="255" />
+          <Property Name="dclh_quan_huyen" Type="nvarchar" MaxLength="255" />
+          <Property Name="dclh_phuong_xa" Type="nvarchar" MaxLength="255" />
+          <Property Name="dienthoai" Type="nvarchar" MaxLength="255" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="255" />
+          <Property Name="cha_hoten" Type="nvarchar" MaxLength="255" />
+          <Property Name="cha_ngaysinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="cha_dienthoai" Type="nvarchar" MaxLength="255" />
+          <Property Name="me_hoten" Type="nvarchar" MaxLength="255" />
+          <Property Name="me_ngaysinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="me_dienthoai" Type="nvarchar" MaxLength="255" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'student_db_all.dbo.aci_hocsinh_insert' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="aci_hocsinh_insert">
+          <Key>
+            <PropertyRef Name="so" />
+          </Key>
+          <Property Name="so" Type="int" Nullable="false" />
+          <Property Name="ma" Type="nvarchar" MaxLength="200" />
+          <Property Name="hodem" Type="nvarchar" MaxLength="200" />
+          <Property Name="ten" Type="nvarchar" MaxLength="200" />
+          <Property Name="quoctich" Type="nvarchar" MaxLength="200" />
+          <Property Name="sinhnhat" Type="date" />
+          <Property Name="noisinh" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ngaynhaphoc" Type="date" />
+          <Property Name="phai" Type="nvarchar" MaxLength="50" />
+          <Property Name="dantoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="tongiao" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="cccd" Type="nvarchar" MaxLength="20" />
+          <Property Name="dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="so_donvi" Type="int" />
+          <Property Name="so_namhoc" Type="int" />
+          <Property Name="khoi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="userid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'student_db_all.dbo.aci_hocsinh_log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="aci_hocsinh_log">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="loai" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="so" Type="int" />
+          <Property Name="ma_new" Type="nvarchar" MaxLength="200" />
+          <Property Name="ma_old" Type="nvarchar" MaxLength="200" />
+          <Property Name="hodem" Type="nvarchar" MaxLength="255" />
+          <Property Name="ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="ma2_new" Type="nvarchar" MaxLength="50" />
+          <Property Name="ma2_old" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedDate_old" Type="datetime" />
+          <Property Name="ModifiedDate_new" Type="datetime" />
+          <Property Name="userid" Type="nvarchar" MaxLength="50" />
+          <Property Name="loai" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aci_hocsinh_lop">
+          <Key>
+            <PropertyRef Name="so" />
+            <PropertyRef Name="so_donvi" />
+            <PropertyRef Name="so_hv" />
+            <PropertyRef Name="so_namhoc_lop" />
+          </Key>
+          <Property Name="so" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="so_donvi" Type="int" Nullable="false" />
+          <Property Name="so_hv" Type="int" Nullable="false" />
+          <Property Name="so_namhoc_lop" Type="int" Nullable="false" />
+          <Property Name="so_namhoc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="so_khoi" Type="int" />
+          <Property Name="so_lophoc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="loai" Type="nvarchar" MaxLength="50" />
+          <Property Name="hp" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="giamtru" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="giamtrutext" Type="nvarchar" MaxLength="255" />
+          <Property Name="ptck" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="lydock" Type="nvarchar" MaxLength="255" />
+          <Property Name="ptck1" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="lydock1" Type="nvarchar" MaxLength="255" />
+          <Property Name="ptck2" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="lydock2" Type="nvarchar" MaxLength="255" />
+          <Property Name="ptck3" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="lydock3" Type="nvarchar" MaxLength="255" />
+          <Property Name="ptck4" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="lydock4" Type="nvarchar" MaxLength="255" />
+          <Property Name="diem1" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="diem2" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="diem3" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="diem4" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="dtb" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Thu_T01" Type="bit" />
+          <Property Name="NoidungThu_t01" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T02" Type="bit" />
+          <Property Name="NoidungThu_t02" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T03" Type="bit" />
+          <Property Name="NoidungThu_t03" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T04" Type="bit" />
+          <Property Name="NoidungThu_t04" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T05" Type="bit" />
+          <Property Name="NoidungThu_t05" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T06" Type="bit" />
+          <Property Name="NoidungThu_t06" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T07" Type="bit" />
+          <Property Name="NoidungThu_t07" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T08" Type="bit" />
+          <Property Name="NoidungThu_t08" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T09" Type="bit" />
+          <Property Name="NoidungThu_t09" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T10" Type="bit" />
+          <Property Name="NoidungThu_t10" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T11" Type="bit" />
+          <Property Name="NoidungThu_t11" Type="nvarchar" MaxLength="500" />
+          <Property Name="NoidungThu_t12" Type="nvarchar" MaxLength="500" />
+          <Property Name="Thu_T12" Type="bit" />
+          <Property Name="noikcb" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ngayvaolop" Type="datetime" />
+          <Property Name="trangthai" Type="int" />
+          <Property Name="trangthaingay" Type="datetime" />
+          <Property Name="trangthailydo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="500" />
+          <Property Name="ghichuta" Type="nvarchar" MaxLength="500" />
+          <Property Name="nopdondknhaphoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopthongtinhs" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopgiaycnhoanthanhcuoicap" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopgcnchuyentruong" Type="nvarchar" MaxLength="50" />
+          <Property Name="nophocba" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopgiaykhaisinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopsohokhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopphieukhamsuckhoe" Type="nvarchar" MaxLength="50" />
+          <Property Name="nophinhanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="nopkhac" Type="nvarchar" MaxLength="50" />
+          <Property Name="solh" Type="int" />
+          <Property Name="dong1nam" Type="bit" Nullable="false" />
+          <Property Name="dongta1nam" Type="bit" Nullable="false" />
+          <Property Name="dongnt1nam" Type="bit" Nullable="false" />
+          <Property Name="dongxe1nam" Type="bit" Nullable="false" />
+          <Property Name="stt" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="userid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'student_db_all.dbo.aci_hocsinh_lop_log' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="aci_hocsinh_lop_log">
+          <Property Name="so_hsl" Type="int" />
+          <Property Name="so_hocsinh" Type="int" />
+          <Property Name="so_donvi" Type="int" />
+          <Property Name="so_namhoc_lop_old" Type="int" />
+          <Property Name="so_namhoc_lop_new" Type="int" />
+          <Property Name="ModifiedDate_old" Type="datetime" />
+          <Property Name="ModifiedDate_new" Type="datetime" />
+          <Property Name="userid" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityContainer Name="student_db_allModel1StoreContainer">
+          <EntitySet Name="aci_hocsinh_lop" EntityType="Self.aci_hocsinh_lop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aci_hocsinh_insert" EntityType="Self.aci_hocsinh_insert" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [aci_hocsinh_insert].[so] AS [so], 
+    [aci_hocsinh_insert].[ma] AS [ma], 
+    [aci_hocsinh_insert].[hodem] AS [hodem], 
+    [aci_hocsinh_insert].[ten] AS [ten], 
+    [aci_hocsinh_insert].[quoctich] AS [quoctich], 
+    [aci_hocsinh_insert].[sinhnhat] AS [sinhnhat], 
+    [aci_hocsinh_insert].[noisinh] AS [noisinh], 
+    [aci_hocsinh_insert].[ngaynhaphoc] AS [ngaynhaphoc], 
+    [aci_hocsinh_insert].[phai] AS [phai], 
+    [aci_hocsinh_insert].[dantoc] AS [dantoc], 
+    [aci_hocsinh_insert].[tongiao] AS [tongiao], 
+    [aci_hocsinh_insert].[email] AS [email], 
+    [aci_hocsinh_insert].[cccd] AS [cccd], 
+    [aci_hocsinh_insert].[dienthoai] AS [dienthoai], 
+    [aci_hocsinh_insert].[so_donvi] AS [so_donvi], 
+    [aci_hocsinh_insert].[so_namhoc] AS [so_namhoc], 
+    [aci_hocsinh_insert].[khoi] AS [khoi], 
+    [aci_hocsinh_insert].[ModifiedDate] AS [ModifiedDate], 
+    [aci_hocsinh_insert].[userid] AS [userid]
+    FROM [dbo].[aci_hocsinh_insert] AS [aci_hocsinh_insert]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="aci_hocsinh_log" EntityType="Self.aci_hocsinh_log" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [aci_hocsinh_log].[id] AS [id], 
+    [aci_hocsinh_log].[so] AS [so], 
+    [aci_hocsinh_log].[ma_new] AS [ma_new], 
+    [aci_hocsinh_log].[ma_old] AS [ma_old], 
+    [aci_hocsinh_log].[hodem] AS [hodem], 
+    [aci_hocsinh_log].[ten] AS [ten], 
+    [aci_hocsinh_log].[ma2_new] AS [ma2_new], 
+    [aci_hocsinh_log].[ma2_old] AS [ma2_old], 
+    [aci_hocsinh_log].[ModifiedDate_old] AS [ModifiedDate_old], 
+    [aci_hocsinh_log].[ModifiedDate_new] AS [ModifiedDate_new], 
+    [aci_hocsinh_log].[userid] AS [userid], 
+    [aci_hocsinh_log].[loai] AS [loai]
+    FROM [dbo].[aci_hocsinh_log] AS [aci_hocsinh_log]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="student_db_allModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="aci_hocsinh_lop">
+          <Key>
+            <PropertyRef Name="so" />
+            <PropertyRef Name="so_donvi" />
+            <PropertyRef Name="so_hv" />
+            <PropertyRef Name="so_namhoc_lop" />
+          </Key>
+          <Property Name="so" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="so_donvi" Type="Int32" Nullable="false" />
+          <Property Name="so_hv" Type="Int32" Nullable="false" />
+          <Property Name="so_namhoc_lop" Type="Int32" Nullable="false" />
+          <Property Name="so_namhoc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="so_khoi" Type="Int32" />
+          <Property Name="so_lophoc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hp" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="giamtru" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="giamtrutext" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ptck" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lydock" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ptck1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lydock1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ptck2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lydock2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ptck3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lydock3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ptck4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lydock4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="diem1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="diem2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="diem3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="diem4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="dtb" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Thu_T01" Type="Boolean" />
+          <Property Name="NoidungThu_t01" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T02" Type="Boolean" />
+          <Property Name="NoidungThu_t02" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T03" Type="Boolean" />
+          <Property Name="NoidungThu_t03" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T04" Type="Boolean" />
+          <Property Name="NoidungThu_t04" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T05" Type="Boolean" />
+          <Property Name="NoidungThu_t05" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T06" Type="Boolean" />
+          <Property Name="NoidungThu_t06" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T07" Type="Boolean" />
+          <Property Name="NoidungThu_t07" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T08" Type="Boolean" />
+          <Property Name="NoidungThu_t08" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T09" Type="Boolean" />
+          <Property Name="NoidungThu_t09" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T10" Type="Boolean" />
+          <Property Name="NoidungThu_t10" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T11" Type="Boolean" />
+          <Property Name="NoidungThu_t11" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NoidungThu_t12" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Thu_T12" Type="Boolean" />
+          <Property Name="noikcb" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ngayvaolop" Type="DateTime" Precision="3" />
+          <Property Name="trangthai" Type="Int32" />
+          <Property Name="trangthaingay" Type="DateTime" Precision="3" />
+          <Property Name="trangthailydo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ghichuta" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nopdondknhaphoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopthongtinhs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopgiaycnhoanthanhcuoicap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopgcnchuyentruong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nophocba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopgiaykhaisinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopsohokhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopphieukhamsuckhoe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nophinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nopkhac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="solh" Type="Int32" />
+          <Property Name="dong1nam" Type="Boolean" Nullable="false" />
+          <Property Name="dongta1nam" Type="Boolean" Nullable="false" />
+          <Property Name="dongnt1nam" Type="Boolean" Nullable="false" />
+          <Property Name="dongxe1nam" Type="Boolean" Nullable="false" />
+          <Property Name="stt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="aci_hocsinh_insert">
+          <Key>
+            <PropertyRef Name="so" />
+          </Key>
+          <Property Name="so" Type="Int32" Nullable="false" />
+          <Property Name="ma" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="hodem" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="quoctich" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="sinhnhat" Type="DateTime" Precision="0" />
+          <Property Name="noisinh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ngaynhaphoc" Type="DateTime" Precision="0" />
+          <Property Name="phai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dantoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tongiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cccd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="so_donvi" Type="Int32" />
+          <Property Name="so_namhoc" Type="Int32" />
+          <Property Name="khoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="aci_hocsinh_log">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="loai" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="so" Type="Int32" />
+          <Property Name="ma_new" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ma_old" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="hodem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ma2_new" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ma2_old" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate_old" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate_new" Type="DateTime" Precision="3" />
+          <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="loai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="student_db_allEntities7" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="aci_hocsinh_lop" EntityType="Self.aci_hocsinh_lop" />
+          <EntitySet Name="aci_hocsinh_insert" EntityType="Self.aci_hocsinh_insert" />
+          <EntitySet Name="aci_hocsinh_log" EntityType="Self.aci_hocsinh_log" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="student_db_allModel1StoreContainer" CdmEntityContainer="student_db_allEntities7">
+          <EntitySetMapping Name="aci_hocsinh_lop">
+            <EntityTypeMapping TypeName="student_db_allModel1.aci_hocsinh_lop">
+              <MappingFragment StoreEntitySet="aci_hocsinh_lop">
+                <ScalarProperty Name="so" ColumnName="so" />
+                <ScalarProperty Name="so_donvi" ColumnName="so_donvi" />
+                <ScalarProperty Name="so_hv" ColumnName="so_hv" />
+                <ScalarProperty Name="so_namhoc_lop" ColumnName="so_namhoc_lop" />
+                <ScalarProperty Name="so_namhoc" ColumnName="so_namhoc" />
+                <ScalarProperty Name="so_khoi" ColumnName="so_khoi" />
+                <ScalarProperty Name="so_lophoc" ColumnName="so_lophoc" />
+                <ScalarProperty Name="loai" ColumnName="loai" />
+                <ScalarProperty Name="hp" ColumnName="hp" />
+                <ScalarProperty Name="giamtru" ColumnName="giamtru" />
+                <ScalarProperty Name="giamtrutext" ColumnName="giamtrutext" />
+                <ScalarProperty Name="ptck" ColumnName="ptck" />
+                <ScalarProperty Name="lydock" ColumnName="lydock" />
+                <ScalarProperty Name="ptck1" ColumnName="ptck1" />
+                <ScalarProperty Name="lydock1" ColumnName="lydock1" />
+                <ScalarProperty Name="ptck2" ColumnName="ptck2" />
+                <ScalarProperty Name="lydock2" ColumnName="lydock2" />
+                <ScalarProperty Name="ptck3" ColumnName="ptck3" />
+                <ScalarProperty Name="lydock3" ColumnName="lydock3" />
+                <ScalarProperty Name="ptck4" ColumnName="ptck4" />
+                <ScalarProperty Name="lydock4" ColumnName="lydock4" />
+                <ScalarProperty Name="diem1" ColumnName="diem1" />
+                <ScalarProperty Name="diem2" ColumnName="diem2" />
+                <ScalarProperty Name="diem3" ColumnName="diem3" />
+                <ScalarProperty Name="diem4" ColumnName="diem4" />
+                <ScalarProperty Name="dtb" ColumnName="dtb" />
+                <ScalarProperty Name="Thu_T01" ColumnName="Thu_T01" />
+                <ScalarProperty Name="NoidungThu_t01" ColumnName="NoidungThu_t01" />
+                <ScalarProperty Name="Thu_T02" ColumnName="Thu_T02" />
+                <ScalarProperty Name="NoidungThu_t02" ColumnName="NoidungThu_t02" />
+                <ScalarProperty Name="Thu_T03" ColumnName="Thu_T03" />
+                <ScalarProperty Name="NoidungThu_t03" ColumnName="NoidungThu_t03" />
+                <ScalarProperty Name="Thu_T04" ColumnName="Thu_T04" />
+                <ScalarProperty Name="NoidungThu_t04" ColumnName="NoidungThu_t04" />
+                <ScalarProperty Name="Thu_T05" ColumnName="Thu_T05" />
+                <ScalarProperty Name="NoidungThu_t05" ColumnName="NoidungThu_t05" />
+                <ScalarProperty Name="Thu_T06" ColumnName="Thu_T06" />
+                <ScalarProperty Name="NoidungThu_t06" ColumnName="NoidungThu_t06" />
+                <ScalarProperty Name="Thu_T07" ColumnName="Thu_T07" />
+                <ScalarProperty Name="NoidungThu_t07" ColumnName="NoidungThu_t07" />
+                <ScalarProperty Name="Thu_T08" ColumnName="Thu_T08" />
+                <ScalarProperty Name="NoidungThu_t08" ColumnName="NoidungThu_t08" />
+                <ScalarProperty Name="Thu_T09" ColumnName="Thu_T09" />
+                <ScalarProperty Name="NoidungThu_t09" ColumnName="NoidungThu_t09" />
+                <ScalarProperty Name="Thu_T10" ColumnName="Thu_T10" />
+                <ScalarProperty Name="NoidungThu_t10" ColumnName="NoidungThu_t10" />
+                <ScalarProperty Name="Thu_T11" ColumnName="Thu_T11" />
+                <ScalarProperty Name="NoidungThu_t11" ColumnName="NoidungThu_t11" />
+                <ScalarProperty Name="NoidungThu_t12" ColumnName="NoidungThu_t12" />
+                <ScalarProperty Name="Thu_T12" ColumnName="Thu_T12" />
+                <ScalarProperty Name="noikcb" ColumnName="noikcb" />
+                <ScalarProperty Name="ngayvaolop" ColumnName="ngayvaolop" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="trangthaingay" ColumnName="trangthaingay" />
+                <ScalarProperty Name="trangthailydo" ColumnName="trangthailydo" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="ghichuta" ColumnName="ghichuta" />
+                <ScalarProperty Name="nopdondknhaphoc" ColumnName="nopdondknhaphoc" />
+                <ScalarProperty Name="nopthongtinhs" ColumnName="nopthongtinhs" />
+                <ScalarProperty Name="nopgiaycnhoanthanhcuoicap" ColumnName="nopgiaycnhoanthanhcuoicap" />
+                <ScalarProperty Name="nopgcnchuyentruong" ColumnName="nopgcnchuyentruong" />
+                <ScalarProperty Name="nophocba" ColumnName="nophocba" />
+                <ScalarProperty Name="nopgiaykhaisinh" ColumnName="nopgiaykhaisinh" />
+                <ScalarProperty Name="nopsohokhau" ColumnName="nopsohokhau" />
+                <ScalarProperty Name="nopphieukhamsuckhoe" ColumnName="nopphieukhamsuckhoe" />
+                <ScalarProperty Name="nophinhanh" ColumnName="nophinhanh" />
+                <ScalarProperty Name="nopkhac" ColumnName="nopkhac" />
+                <ScalarProperty Name="solh" ColumnName="solh" />
+                <ScalarProperty Name="dong1nam" ColumnName="dong1nam" />
+                <ScalarProperty Name="dongta1nam" ColumnName="dongta1nam" />
+                <ScalarProperty Name="dongnt1nam" ColumnName="dongnt1nam" />
+                <ScalarProperty Name="dongxe1nam" ColumnName="dongxe1nam" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aci_hocsinh_insert">
+            <EntityTypeMapping TypeName="student_db_allModel1.aci_hocsinh_insert">
+              <MappingFragment StoreEntitySet="aci_hocsinh_insert">
+                <ScalarProperty Name="so" ColumnName="so" />
+                <ScalarProperty Name="ma" ColumnName="ma" />
+                <ScalarProperty Name="hodem" ColumnName="hodem" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="quoctich" ColumnName="quoctich" />
+                <ScalarProperty Name="sinhnhat" ColumnName="sinhnhat" />
+                <ScalarProperty Name="noisinh" ColumnName="noisinh" />
+                <ScalarProperty Name="ngaynhaphoc" ColumnName="ngaynhaphoc" />
+                <ScalarProperty Name="phai" ColumnName="phai" />
+                <ScalarProperty Name="dantoc" ColumnName="dantoc" />
+                <ScalarProperty Name="tongiao" ColumnName="tongiao" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="cccd" ColumnName="cccd" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="so_donvi" ColumnName="so_donvi" />
+                <ScalarProperty Name="so_namhoc" ColumnName="so_namhoc" />
+                <ScalarProperty Name="khoi" ColumnName="khoi" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aci_hocsinh_log">
+            <EntityTypeMapping TypeName="student_db_allModel1.aci_hocsinh_log">
+              <MappingFragment StoreEntitySet="aci_hocsinh_log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="so" ColumnName="so" />
+                <ScalarProperty Name="ma_new" ColumnName="ma_new" />
+                <ScalarProperty Name="ma_old" ColumnName="ma_old" />
+                <ScalarProperty Name="hodem" ColumnName="hodem" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="ma2_new" ColumnName="ma2_new" />
+                <ScalarProperty Name="ma2_old" ColumnName="ma2_old" />
+                <ScalarProperty Name="ModifiedDate_old" ColumnName="ModifiedDate_old" />
+                <ScalarProperty Name="ModifiedDate_new" ColumnName="ModifiedDate_new" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="loai" ColumnName="loai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,281 @@
+﻿@using SchoolSMSVaschool.Model;
+@model List<MenuStudent>
+@using DevExpress.Utils;
+@using DevExpress.XtraEditors;
+
+
+@{
+    var gridView = Html.DevExpress().GridView(gridViewSettings =>
+    {
+        gridViewSettings.Name = "gridView";
+        gridViewSettings.KeyFieldName = "ID";
+
+        gridViewSettings.CallbackRouteValues = new { Controller = "Menu", Action = "MenuViewPartial" };
+        gridViewSettings.CustomActionRouteValues = new { Controller = "Menu", Action = "MenuViewCustomActionPartial" };
+        gridViewSettings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Menu", Action = "MenuViewAddNewPartial" };
+        gridViewSettings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Menu", Action = "MenuViewUpdatePartial" };
+
+        gridViewSettings.EnablePagingGestures = AutoBoolean.False;
+
+        gridViewSettings.ControlStyle.CssClass = "grid-view";
+        gridViewSettings.Width = Unit.Percentage(100);
+
+        gridViewSettings.Styles.Cell.Wrap = DefaultBoolean.False;
+        gridViewSettings.Styles.PagerBottomPanel.CssClass = "pager";
+        gridViewSettings.Styles.FocusedRow.CssClass = "focused";
+
+        gridViewSettings.SettingsBehavior.AllowFocusedRow = true;
+        gridViewSettings.SettingsBehavior.AllowSelectByRowClick = true;
+        gridViewSettings.SettingsBehavior.AllowEllipsisInText = true;
+        gridViewSettings.SettingsBehavior.AllowDragDrop = false;
+
+        gridViewSettings.SettingsSearchPanel.CustomEditorName = "searchButtonEdit";
+
+        gridViewSettings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm;
+        gridViewSettings.SettingsEditing.EditFormColumnCount = 2;
+
+        gridViewSettings.SettingsSearchPanel.CustomEditorName = "searchButtonEdit";
+
+        gridViewSettings.Settings.VerticalScrollBarMode = ScrollBarMode.Hidden;
+        gridViewSettings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+        gridViewSettings.Settings.ShowHeaderFilterButton = true;
+
+        gridViewSettings.SettingsPager.PageSize = 15;
+        gridViewSettings.SettingsPager.EnableAdaptivity = true;
+        gridViewSettings.SettingsPager.PageSizeItemSettings.Visible = true;
+
+        gridViewSettings.SettingsExport.EnableClientSideExportAPI = true;
+        gridViewSettings.SettingsExport.ExportSelectedRowsOnly = true;
+
+        gridViewSettings.SettingsPopup.EditForm.SettingsAdaptivity.MaxWidth = 800;
+        gridViewSettings.SettingsPopup.EditForm.SettingsAdaptivity.Mode = PopupControlAdaptivityMode.Always;
+        gridViewSettings.SettingsPopup.EditForm.SettingsAdaptivity.VerticalAlign = PopupAdaptiveVerticalAlign.WindowCenter;
+
+        gridViewSettings.EditFormLayoutProperties.SettingsAdaptivity.AdaptivityMode = FormLayoutAdaptivityMode.SingleColumnWindowLimit;
+        gridViewSettings.EditFormLayoutProperties.SettingsAdaptivity.SwitchToSingleColumnAtWindowInnerWidth = 600;
+        gridViewSettings.EditFormLayoutProperties.ColCount = 2;
+        gridViewSettings.EditFormLayoutProperties.Items.Add("ID");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("Ma");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("Ma2");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("FullName");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("NgaySinh");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("GioiTinh");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("NoiSinh");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("DanToc");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("QuocTich");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("DiaChi");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("DienThoai");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("TenCha");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("DTCha");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("TenMe");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("DTMe");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("TrangThai");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("TinhTrang");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("Khoi");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("CoSo");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("ChinhSach");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("TenNguoiQuanHe");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("QuanHe");
+        gridViewSettings.EditFormLayoutProperties.Items.Add("Note");
+
+        gridViewSettings.EditFormLayoutProperties.Items.AddCommandItem(itemSettings =>
+        {
+            itemSettings.ColumnSpan = 2;
+            itemSettings.HorizontalAlign = FormLayoutHorizontalAlign.Right;
+        });
+
+        gridViewSettings.CommandColumn.Visible = true;
+        gridViewSettings.CommandColumn.ShowSelectCheckbox = true;
+        gridViewSettings.CommandColumn.SelectAllCheckboxMode = GridViewSelectAllCheckBoxMode.AllPages;
+        gridViewSettings.CommandColumn.VisibleIndex = 0;
+        gridViewSettings.CommandColumn.Width = Unit.Pixel(52);
+
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "ID";
+            columnSettings.Caption = "ID";
+            columnSettings.Width = Unit.Pixel(150);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "Ma";
+            columnSettings.Caption = "Ma";
+            columnSettings.Width = Unit.Pixel(150);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "Ma2";
+            columnSettings.Caption = "Ma2";
+            columnSettings.Width = Unit.Pixel(150);
+        });
+
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "FullName";
+            columnSettings.Caption = "FullName";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "NgaySinh";
+            columnSettings.Caption = "NgaySinh";
+            columnSettings.PropertiesEdit.DisplayFormatString = "yyyy";
+            columnSettings.ColumnType = MVCxGridViewColumnType.DateEdit;
+
+            columnSettings.Width = Unit.Pixel(200);
+        });
+
+
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "GioiTinh";
+            columnSettings.Width = Unit.Pixel(120);
+            columnSettings.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+
+            columnSettings.EditorProperties().ComboBox(comboBoxProperties =>
+            {
+                comboBoxProperties.ShowImageInEditBox = true;
+                comboBoxProperties.ItemImage.Width = 16;
+                comboBoxProperties.ItemImage.Height = 16;
+                comboBoxProperties.Items.Add("Nam", 1);
+                comboBoxProperties.Items.Add("Nu", 2);
+            });
+        });
+
+
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "NoiSinh";
+            columnSettings.Caption = "NoiSinh";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "QuocTich";
+            columnSettings.Caption = "QuocTich";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "DanToc";
+            columnSettings.Caption = "DanToc";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "DiaChi";
+            columnSettings.Caption = "DiaChi";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "QuocTich";
+            columnSettings.Caption = "QuocTich";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "DienThoai";
+            columnSettings.Caption = "DienThoai";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "TenCha";
+            columnSettings.Caption = "TenCha";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "DTCha";
+            columnSettings.Caption = "DTCha";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "TenMe";
+            columnSettings.Caption = "TenMe";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "DTMe";
+            columnSettings.Caption = "DTMe";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "TrangThai";
+            columnSettings.Width = Unit.Pixel(150);
+            columnSettings.CellStyle.HorizontalAlign = HorizontalAlign.Center;
+
+            columnSettings.EditorProperties().ComboBox(comboBoxProperties =>
+            {
+                comboBoxProperties.ShowImageInEditBox = true;
+                comboBoxProperties.ItemImage.Width = 16;
+                comboBoxProperties.ItemImage.Height = 16;
+                comboBoxProperties.Items.Add("Dang hoc", 1);
+                comboBoxProperties.Items.Add("Nghi", 2);
+            });
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "TinhTrang";
+            columnSettings.Caption = "TinhTrang";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "Khoi";
+            columnSettings.Caption = "Khoi";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "CoSo";
+            columnSettings.Caption = "CoSo";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "ChinhSach";
+            columnSettings.Caption = "ChinhSach";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "TenNguoiQuanHe";
+            columnSettings.Caption = "TenNguoiQuanHe";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "QuanHe";
+            columnSettings.Caption = "QuanHe";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+        gridViewSettings.Columns.Add(columnSettings =>
+        {
+            columnSettings.FieldName = "Note";
+            columnSettings.Caption = "Ghi chú";
+            columnSettings.Width = Unit.Pixel(300);
+        });
+
+        gridViewSettings.ClientSideEvents.Init = "onGridViewInit";
+        gridViewSettings.ClientSideEvents.SelectionChanged = "onGridViewSelectionChanged";
+        gridViewSettings.ClientSideEvents.BeginCallback = "onGridViewBeginCallback";
+
+
+        gridViewSettings.CellEditorInitialize = (s, e) =>
+        {
+            ((ASPxEdit)e.Editor).ValidationSettings.Display = Display.Dynamic;
+        };
+    });
+    if (ViewBag.GeneralError != null)
+    {
+        gridView.SetEditErrorText(ViewBag.GeneralError);
+    }
+}
+
+@gridView.Bind(Model).GetHtml()
